@@ -7,7 +7,11 @@ Messages are presented byte-wise, where **b0** is the least-significant-byte.
 States are represented in binary and hex, and are provided with a human-readable description.
 
 ## BY ID
-### 0x91
+### 0x91 - Cruise Control State
+    - b2
+        - 00000000 (0x00) GUESS Cruise control not setup / brake must be pressed
+        - 00100000 (0x20) Brake released, cruise control enabled?
+        - 10100000 (0xa0) Brake pressed
     - b1
         - 00000000 (00) Cruise control on
         - 00100000 (20) Cruise control off
@@ -117,6 +121,11 @@ States are represented in binary and hex, and are provided with a human-readable
     - b3:b4
         - Brightness sensor
         - 16 bit integer
+### 0x490 SID Beep
+     - Normal state
+        - 0x00 0x00 
+     - Beep state
+        - 0x00 0x80
 ### 0x520
     - b0
         - Years after 2000
